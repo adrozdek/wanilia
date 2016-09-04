@@ -136,6 +136,9 @@
 </footer>
 <script src="js/jquery-3.1.0.min.js"></script>
 <script src="js/main.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcnr-W7wsvv2o6OufBtKkNYoXYRjEivKk&callback=initMap"
+        async defer>
+</script>
 <script>
     function initMap() {
         var myLatLng = {lat: 51.802382, lng: 15.717503};
@@ -179,12 +182,8 @@
 
         marker.addListener('click', function () {
             infowindow.open(map, marker);
-
         });
     }
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcnr-W7wsvv2o6OufBtKkNYoXYRjEivKk&callback=initMap"
-        async defer>
 </script>
 </body>
 </html>
