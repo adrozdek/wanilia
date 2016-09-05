@@ -509,6 +509,10 @@ body div.fb-page {
     .contact .info-wrapper ul.contact-info:after {
         width: 50%;
     }
+
+    body div.fb-page, body div.fcb-icon {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -525,8 +529,5 @@ body div.fb-page {
     .contact {
         flex-direction: column;
         justify-content: space-around;
-    }
-    .fb-page {
-        display: none;
     }
 }
