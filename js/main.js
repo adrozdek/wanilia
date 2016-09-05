@@ -1,4 +1,4 @@
-$(document).ready(function init () {
+$(document).ready(function init() {
 
 
     var about = document.getElementById("about");
@@ -9,7 +9,7 @@ $(document).ready(function init () {
     nav = document.getElementsByClassName("page-nav")[0];
     title = document.getElementsByClassName("cafe-title")[0];
 
-    if ($(window).width() >= 100) {
+
         about.addEventListener("click", function (e) {
             e.preventDefault();
 
@@ -68,35 +68,35 @@ $(document).ready(function init () {
                 x.clone(true).removeAttr('style').find("img").attr("src", info_wrapper_src).parent().prependTo($(".info .previous-info"));
             }
         });
-    } else {
 
-        console.log("okn< 800px");
-        about.addEventListener("click", function (e) {
 
-            removeActiveClassFromNav();
-            this.classList.add("active");
-        });
-
-        menu.addEventListener("click", function (e) {
-
-            removeActiveClassFromNav();
-            this.classList.add("active");
-        });
-
-        info.addEventListener("click", function (e) {
-
-            removeActiveClassFromNav();
-            this.classList.add("active");
-
-        });
-
-        contact.addEventListener("click", function (e) {
-
-            removeActiveClassFromNav();
-            this.classList.add("active");
-
-        });
-    }
+    //     console.log("okn< 800px");
+    //     about.addEventListener("click", function (e) {
+    //
+    //         removeActiveClassFromNav();
+    //         this.classList.add("active");
+    //     });
+    //
+    //     menu.addEventListener("click", function (e) {
+    //
+    //         removeActiveClassFromNav();
+    //         this.classList.add("active");
+    //     });
+    //
+    //     info.addEventListener("click", function (e) {
+    //
+    //         removeActiveClassFromNav();
+    //         this.classList.add("active");
+    //
+    //     });
+    //
+    //     contact.addEventListener("click", function (e) {
+    //
+    //         removeActiveClassFromNav();
+    //         this.classList.add("active");
+    //
+    //     });
+    // }
 
     function addHiddenClassToContainerChildren() {
         for (var i = 0; i < container.children.length; i++) {
@@ -112,11 +112,17 @@ $(document).ready(function init () {
 });
 
 $(window).on('scroll', function () {
-    var navi = $("nav");
-    if($(window).scrollTop() > 150) {
-        navi.attr("class", "attached-nav");
-    } else {
-        navi.attr("class", "");
+        var navi = $("nav");
+        var logo = $("header div.logo-wrapper");
+
+
+            if ($(window).scrollTop() > 150) {
+                logo.hide();
+                navi.attr("class", "attached-nav");
+            } else {
+                navi.attr("class", '')
+            }
+        
     }
-});
+);
 
