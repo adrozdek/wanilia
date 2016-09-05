@@ -431,6 +431,23 @@ footer span.footer-text {
     border: 1px solid dimgray;
 }
 
+
+div.fcb-icon {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    top: 45%;
+    left: 0;
+    background: url("../images/facebook.png");
+    background-size: cover;
+}
+
+body div.fb-page {
+    position: fixed;
+    top: 45%;
+    left: -180px;
+}
+
 @media screen and (max-width: 1120px) {
     ul.page-nav {
         margin: 0 6%;
@@ -508,5 +525,8 @@ footer span.footer-text {
     .contact {
         flex-direction: column;
         justify-content: space-around;
+    }
+    .fb-page {
+        display: none;
     }
 }
