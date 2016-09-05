@@ -113,14 +113,13 @@ $(document).ready(function init() {
 
 $(window).on('scroll', function () {
         var navi = $("nav");
-        var logo = $("header div.logo-wrapper");
-
 
             if ($(window).scrollTop() > 150) {
-                logo.hide();
                 navi.attr("class", "attached-nav");
+                $(".cafe-title").css({"padding-top": "57px"});
             } else {
-                navi.attr("class", '')
+                navi.attr("class", '');
+                $(".cafe-title").css({"padding-top": "0px"});
             }
         
     }
