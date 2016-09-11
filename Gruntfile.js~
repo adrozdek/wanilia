@@ -1,0 +1,29 @@
+module.exports = function(grunt) {
+  require('jit-grunt')(grunt);
+
+  grunt.initConfig({
+    less: {
+      development: {
+        options: {
+          compress: true,
+          yuicompress: true,
+          optimization: 2
+        },
+        files: {
+          "css/main.css": "sass/main.sass",
+        }
+      }
+    },
+    watch: {
+      styles: {
+        files: ['sass/**/*.sass'],
+        tasks: ['sass'],
+        options: {
+          nospawn: true
+        }
+      }
+    }
+  });
+
+  grunt.registerTask('default', ['sass', 'watch']);
+};

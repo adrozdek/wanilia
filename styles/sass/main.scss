@@ -1,0 +1,296 @@
+@import "reset";
+@import "config";
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'PT Sans', sans-serif;
+  background-color: $whitesmoke_color;
+  height: 100%;
+}
+
+img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+p {
+  margin-bottom: 3%;
+  line-height: 1.5em;
+}
+
+#page {
+  min-height: 100%;
+  margin-bottom: -50px;
+
+  &:after {
+    content: "";
+    display: block;
+    height: 50px;
+  }
+}
+
+.image-wrapper {
+  margin: 0 10px 0;
+}
+
+.hidden {
+  display: none;
+}
+
+header {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+
+  .header-image {
+    width: 100%;
+    height: 330px;
+    background-size: cover;
+    background-image: url("../../images/tojeto.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    @media screen and (max-width: 480px) {
+      height: 200px;
+      box-shadow: 1px 3px 1px -2px #bfb9b9;
+    }
+  }
+
+  .navigation {
+    position: relative;
+    display: block;
+
+    //@media screen and (max-width: 480px) {
+    //  display: block;
+    //}
+
+    &.attached-nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 11;
+
+      //.mobile-navigation span.nav-title {
+      //  color: grey;
+      //}
+    }
+
+    .mobile-navigation {
+      position: relative;
+      display: none;
+      opacity: .9;
+      @media screen and (max-width: 480px) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #ffffff;
+        height: 35px;
+        z-index: 10;
+
+        span {
+          display: inline-block;
+          color: #000000;
+          text-align: center;
+          width: 100%;
+          height: inherit;
+          border-bottom: 1px solid grey;
+        }
+      }
+
+      .nav-title {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        //color: #ffffff;
+        color: grey;
+      }
+
+      #mobile-nav-button {
+        position: absolute;
+        right: 10px;
+        z-index: 11;
+
+        @media screen and (max-width: 480px) {
+          display: block;
+        }
+
+        span {
+          display: block;
+          width: 27px;
+          height: 2px;
+          margin-bottom: 4px;
+          background-color: #000000;
+          transition: all .7s ease-in-out;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+
+        &.close-icon {
+          span {
+            margin: 0;
+          }
+          span:first-child {
+            transform: rotate(45deg);
+          }
+          span:nth-child(2) {
+            transform: rotate(-45deg);
+            position: relative;
+            bottom: 2px;
+          }
+          span:last-child {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .menu {
+      display: block;
+      width: 100%;
+      height: 50px;
+      position: relative;
+      background-color: #ffffff;
+      box-shadow: 0 3px 1px -2px #bfb9b9;
+
+      &.attached-nav {
+        position: fixed;
+        top: 0;
+        z-index: 10;
+      }
+
+      @media screen and (max-width: 480px) {
+        display: none;
+        height: auto;
+        text-align: center;
+      }
+
+      .page-nav {
+        width: 90%;
+        margin: 0 auto;
+        max-width: 1150px;
+        display: flex;
+        justify-content: space-between;
+
+        @media screen and (max-width: 480px) {
+          flex-direction: column;
+        }
+      }
+
+      li {
+        position: relative;
+
+        @media screen and (max-width: 480px) {
+
+          &:last-child {
+            margin-bottom: 10px;
+          }
+        }
+      }
+
+      a {
+        display: inline-block;
+        font-size: 1.3em;
+        color: #000000;
+        padding: 15px 10px;
+
+        &:hover, &.active {
+          color: darkgrey;
+        }
+
+        &.active:after {
+          content: "";
+          width: 100%;
+          height: 3px;
+          background-color: $main_violet;
+          border-bottom: 0;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+
+          @media screen and (max-width: 480px) {
+            width: 80%;
+            left: 10%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.container {
+  width: 90%;
+  margin: 20px auto 20px;
+  max-width: 1150px;
+
+  .page-title {
+    margin-top: 40px;
+    font-size: 1.6em;
+    font-weight: bold;
+    letter-spacing: .2em;
+    margin-bottom: 20px;
+  }
+
+  .page {
+    box-sizing: border-box;
+    position: relative;
+    background-color: #fff;
+    padding: 3%;
+    box-shadow: 0 0 6px 1px #8a8a8a, 0 6px 10px 0 #ffffff;
+  }
+}
+
+footer {
+  //position: fixed;
+  //bottom: 0;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-image: url("../../images/footer.jpg");
+  background-repeat: repeat-x;
+  background-position: center center;
+
+  .footer-text {
+    box-sizing: border-box;
+    padding: 3px 0;
+    text-align: center;
+    color: grey;
+    opacity: .9;
+    background-color: $whitesmoke_color;
+    border: 1px solid grey;
+  }
+
+}
+
+.fb-widget {
+  .fcb-icon {
+    z-index: 20;
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    top: calc(50% - 20px);
+    left: 0;
+    background: url("../../images/facebook.png");
+    background-size: cover;
+  }
+
+  .fb-page {
+    position: fixed;
+    top: 45%;
+    left: -260px;
+  }
+
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
+}
+
+@import "about";
+@import "menu";
+@import "contact";
+@import "news";

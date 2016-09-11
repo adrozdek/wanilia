@@ -1,0 +1,43 @@
+{
+  "name": "wanilia",
+  "version": "0.0.0",
+  "description": "Cafe",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-less": "^1.4.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "jit-grunt": "^0.10.0",
+    "grunt-contrib-watch": "^1.0.0"
+  },
+  "devDependencies": {
+    "grunt-sass": "^1.2.1",
+    "load-grunt-tasks": "^3.5.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adrozdek/wanilia.git"
+  },
+  "keywords": [
+    "kawiarnia",
+    "cafe",
+    "nowa",
+    "sól",
+    "ciasta",
+    "desery",
+    "czekolada",
+    "wypieki",
+    "własne",
+    "ciasta",
+    "rodzinna",
+    "kawiarnia"
+  ],
+  "author": "Agata Drozdek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adrozdek/wanilia/issues"
+  }
+}

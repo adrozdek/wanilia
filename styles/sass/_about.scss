@@ -1,0 +1,29 @@
+.about-page {
+  width: 100%;
+
+  .description {
+    text-align: center;
+  }
+
+  .cafe-photos {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    .image-wrapper {
+      width: 40%;
+      min-width: 390px;
+      margin-bottom: 3vw;
+
+      @media screen and (max-width: 969px) {
+        width: 70%;
+        min-width: 20px;
+      }
+      @media screen and (max-width: 780px) {
+        width: 90%;
+        min-width: 20px;
+      }
+    }
+  }
+}

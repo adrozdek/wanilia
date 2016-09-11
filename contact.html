@@ -1,0 +1,87 @@
+<h1 class="page-title">Kontakt</h1>
+<div id="contact-page" class="contact-page page">
+    <section class="info-wrapper">
+        <h2>Kontakt</h2>
+        <ul class="contact-info">
+            <li>
+                <span class="info-name">Telefon:</span>
+                <span class="info-value">782&nbsp;293&nbsp;701</span>
+            </li>
+            <li>
+                <span class="info-name">Email:</span>
+                <span class="info-value">cafewanilia@o2.pl</span>
+            </li>
+            <li>
+                <span class="info-name">Adres:</span>
+                <span class="info-value">Pl.&nbsp;Wyzwolenia&nbsp;10, Nowa&nbsp;Sól</span>
+            </li>
+        </ul>
+        <h2>Godziny otwarcia</h2>
+        <ul class="opening-hours">
+            <li>
+                <span class="opening-days">pon.-piąt.:</span>
+                <span class="opening-hours">10:00&nbsp;-&nbsp;19:00</span>
+            </li>
+            <li>
+                <span class="opening-days">sob.:</span>
+                <span class="opening-hours">11:00&nbsp;-&nbsp;19:00</span>
+            </li>
+            <li>
+                <span class="opening-days">niedz.:</span>
+                <span class="opening-hours">12:00&nbsp;-&nbsp;18:00</span>
+            </li>
+        </ul>
+    </section>
+    <section class="map-wrapper">
+        <h2>Mapa</h2>
+        <div id="map" class="map"></div>
+    </section>
+</div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcnr-W7wsvv2o6OufBtKkNYoXYRjEivKk&callback=initMap"
+        async defer>
+</script>
+<script type="text/javascript">
+    function initMap() {
+        var myLatLng = {lat: 51.802382, lng: 15.717503};
+
+        var options = {
+            center: myLatLng,
+            zoom: 17,
+            disableDefaultUI: false,
+            scrollwheel: false,
+            draggable: true,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            maxZoom: 26,
+            minZoom: 10,
+            zoomControlOptions: {
+                position: google.maps.ControlPosition.LEFT_BOTTOM,
+                style: google.maps.ZoomControlStyle.DEFAULT
+            },
+            panControlOptions: {
+                position: google.maps.ControlPosition.LEFT_BOTTOM
+            }
+        };
+
+        var map = new google.maps.Map(document.getElementById('map'), options);
+
+        var marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            icon: 'images/icon.png',
+            title: 'Cafe Wanilia'
+        });
+
+        var contentString = '<div class="info-content-wrapper"><h3>Cafe Wanilia</h3><div class="info-content">' +
+                'Jak dojechać? <br>' +
+                '<a href="https://www.google.com/maps/place/Cafe+Wanilia/@51.8023757,15.7163841,18z/data=!3m1!4b1!4m5!3m4!1s0x470607ceb172e591:0xf256c430a4f1da31!8m2!3d51.8023757!4d15.7174811?hl=pl-PL" target="_blank">Mapa</a>' +
+                '</div></div>';
+
+        var infowindow = new google.maps.InfoWindow({
+            content: contentString
+        });
+
+        marker.addListener('click', function () {
+            infowindow.open(map, marker);
+        });
+    }
+</script>

@@ -1,0 +1,30 @@
+module.exports = function(grunt) {
+  require('jit-grunt')(grunt);
+
+  grunt.initConfig({
+    less: {
+      development: {
+        options: {
+          compress: true,
+          yuicompress: true,
+          optimization: 2
+        },
+        files: {
+          "styles/css/main.css": "styles/less/main.less",
+          "styles/css/articles-list.css": "styles/less/articles-list.less",
+        }
+      }
+    },
+    watch: {
+      styles: {
+        files: ['styles/less/**/*.less'],
+        tasks: ['less'],
+        options: {
+          nospawn: true
+        }
+      }
+    }
+  });
+
+  grunt.registerTask('default', ['less', 'watch']);
+};
